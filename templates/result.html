@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container results-container">
+        <a href="/" class="back-link">← Upload Another</a>
+        <h2>Pathology Analysis</h2>
+
+        <div class="viewer">
+            <div class="img-box">
+                <h3>Original</h3>
+                <img src="{{ image_url }}" alt="Original X-Ray">
+            </div>
+            <div class="img-box">
+                <h3>Explainability Map (Grad-CAM)</h3>
+                <img src="{{ heatmap_url }}" alt="Heatmap Overlay">
+            </div>
+        </div>
+
+        <div class="metrics">
+            <h3>Predictions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pathology</th>
+                        <th>Probability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pred in predictions %}
+                    <tr>
+                        <td>{{ pred.label }}</td>
+                        <td>{{ pred.prob }}%</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
