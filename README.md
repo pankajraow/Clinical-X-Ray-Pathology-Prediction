@@ -1,5 +1,7 @@
 # Clinical X-Ray Pathology Prediction
 
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/pankajraow/Clinical-X-Ray-Pathology-Prediction)
+
 A Flask-based web application that serves pretrained models from [TorchXRayVision](https://github.com/mlmed/torchxrayvision) to predict pathologies from Chest X-Rays.
 
 ## Features
